@@ -3,6 +3,9 @@ import requests
 import logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
+import asyncio
+
+
 
 # Telegram Bot Token
 TOKEN = os.getenv("TOKEN")
@@ -87,4 +90,5 @@ def main():
     app.run_polling()
 
 if __name__ == "__main__":
-    main()
+    print("Starting bot...")
+    asyncio.run(main())  # Ensure your bot runs in an async loop
